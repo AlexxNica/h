@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "scoped",
+    "type",
+    "public"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "scoped": {
+      "type": "boolean",
+      "description": "Whether or not this group has URL restrictions for documents that may be annotated within it. Non-scoped (scope: false) groups allow annotation to documents at any URL."
+    },
+    "type": {
+      "type": "string",
+      "enum": ["private", "open"]
+    },
+    "public": {
+      "type": "boolean",
+      "description": "legacy property indicating that a group is world-readable"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URI to group page (only applies to some group types)"
+    }
+  }
+}
